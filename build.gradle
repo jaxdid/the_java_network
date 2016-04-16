@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+jar {
+    baseName = 'the-java-network'
+    version =  '1.0'
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.+' 
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
