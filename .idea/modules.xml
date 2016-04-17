@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/the_java_network.iml" filepath="$PROJECT_DIR$/.idea/modules/the_java_network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/the_java_network_main.iml" filepath="$PROJECT_DIR$/.idea/modules/the_java_network_main.iml" group="the_java_network" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/the_java_network_test.iml" filepath="$PROJECT_DIR$/.idea/modules/the_java_network_test.iml" group="the_java_network" />
+    </modules>
+  </component>
+</project>
