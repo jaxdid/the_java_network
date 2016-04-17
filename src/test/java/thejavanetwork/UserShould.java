@@ -11,16 +11,16 @@ import static org.mockito.Mockito.verify;
 @RunWith(MockitoJUnitRunner.class)
 public class UserShould {
 
-  @Mock Timeline timeline;
+  @Mock MessageRepository messageRepository;
 
   private User user;
 
   @Before public void initialize() {
-    user = new User("Spike", timeline);
+    user = new User("Spike", messageRepository);
   }
 
-  @Test public void publishMessageToTimeline() {
+  @Test public void addMessageToMessages() {
     user.publish("A million dollars isn't cool...");
-    verify(timeline).addMessage("A million dollars isn't cool...");
+    verify(messageRepository).addMessage("A million dollars isn't cool...");
   }
 }

@@ -2,19 +2,19 @@ package thejavanetwork;
 
 public class User {
   private String name;
-  private Timeline timeline;
+  private MessageRepository messageRepository;
 
   public User(String name) {
     this.name = name;
-    this.timeline = new Timeline();
+    this.messageRepository = new MessageRepository();
   }
 
-  public User(String name, Timeline timeline) {
+  public User(String name, MessageRepository messageRepository) {
     this.name = name;
-    this.timeline = timeline;
+    this.messageRepository = messageRepository;
   }
 
   public void publish(String messageText) {
-    this.timeline.addMessage(messageText);
+    this.messageRepository.addMessage(messageText);
   }
 }

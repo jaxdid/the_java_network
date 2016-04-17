@@ -2,7 +2,7 @@ package thejavanetwork;
 
 import java.util.Stack;
 
-public class Timeline {
+public class MessageRepository {
   public void addMessage(String message) {
   }
 }
