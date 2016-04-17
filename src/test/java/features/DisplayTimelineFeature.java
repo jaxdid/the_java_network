@@ -1,21 +1,19 @@
 package features;
 
-import org.mockito.Mockito;
-import thejavanetwork.SocialNetwork;
-import thejavanetwork.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import thejavanetwork.Console;
+import thejavanetwork.SocialNetwork;
+import thejavanetwork.User;
 
 import static org.mockito.Mockito.inOrder;
-import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DisplayTimelineFeature {
-
   @Mock Console console;
 
   private SocialNetwork theJavaNetwork;

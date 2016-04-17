@@ -5,7 +5,7 @@ public class SocialNetwork {
     return new User(name);
   }
 
-  public User createUser(String name, MessageRepository messageRepository) {
-    return new User(name, messageRepository);
+  public User createUser(String name, MessageRepository messageRepository, TimelinePrinter timelinePrinter) {
+    return new User(name, messageRepository, timelinePrinter);
   }
 }
