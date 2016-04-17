@@ -23,8 +23,11 @@ public class SocialNetworkShould {
 
   @Test public void createNewUserWithName() throws Exception {
     String name = "Spike";
-    whenNew(User.class).withArguments(name).thenReturn(newUser);
-    theJavaNetwork.createUser(name);
-    verifyNew(User.class).withArguments(name);
+    MessageRepository messageRepository = new MessageRepository();
+    TimelinePrinter timelinePrinter = new TimelinePrinter(name, new Console());
+
+    whenNew(User.class).withArguments(name, messageRepository, timelinePrinter).thenReturn(newUser);
+    theJavaNetwork.createUser(name, messageRepository, timelinePrinter);
+    verifyNew(User.class).withArguments(name, messageRepository, timelinePrinter);
   }
 }

@@ -29,11 +29,9 @@ public class UserShould {
   }
 
   @Test public void displayTimelineOfAllMessages() {
-    List<String> messages = asList(new String());
+    List<String> messages = asList();
     given(messageRepository.allMessages()).willReturn(messages);
-
     user.displayTimeline();
-
     verify(timelinePrinter).print(messages);
   }
 }

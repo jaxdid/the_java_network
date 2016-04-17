@@ -5,12 +5,6 @@ public class User {
   private MessageRepository messageRepository;
   private TimelinePrinter timelinePrinter;
 
-  public User(String name) {
-    this.name = name;
-    this.messageRepository = new MessageRepository();
-    this.timelinePrinter = new TimelinePrinter();
-  }
-
   public User(String name, MessageRepository messageRepository, TimelinePrinter timelinePrinter) {
     this.name = name;
     this.messageRepository = messageRepository;

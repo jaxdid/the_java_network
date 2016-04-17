@@ -6,9 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import thejavanetwork.Console;
-import thejavanetwork.SocialNetwork;
-import thejavanetwork.User;
+import thejavanetwork.*;
 
 import static org.mockito.Mockito.inOrder;
 
@@ -16,12 +14,13 @@ import static org.mockito.Mockito.inOrder;
 public class DisplayTimelineFeature {
   @Mock Console console;
 
-  private SocialNetwork theJavaNetwork;
   private User user;
 
   @Before public void initialize() {
-    theJavaNetwork = new SocialNetwork();
-    user = theJavaNetwork.createUser("Spike");
+    SocialNetwork theJavaNetwork = new SocialNetwork();
+    user = theJavaNetwork.createUser("Spike",
+                                    new MessageRepository(),
+                                    new TimelinePrinter("Spike", console));
   }
 
   @Test public void displayTimelineContainingAllMessages() {

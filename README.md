@@ -6,6 +6,6 @@ A social network CLI that allows for users to be created, publish messages, subs
 
 ## Features
 **User creating:** a new user called `Spike` can be created
-:construction: **Posting:** `Spike` can publish messages to a personal timeline   
-:construction: **Reading:** `Spike` can view `Nikesh`’s timeline   
+**Posting:** `Spike` can publish messages to a personal timeline
+**Reading:** `Spike` can view `Nikesh`’s timeline
 :construction: **Following:** `Leo` can subscribe to `Spike` and `Nikesh`'s timelines, and view an aggregated list of all subscriptions
