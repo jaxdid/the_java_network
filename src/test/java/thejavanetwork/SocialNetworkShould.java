@@ -25,9 +25,16 @@ public class SocialNetworkShould {
     String name = "Spike";
     MessageRepository messageRepository = new MessageRepository();
     TimelinePrinter timelinePrinter = new TimelinePrinter(name, new Console());
+    SubscriptionRepository subscriptionRepository = new SubscriptionRepository();
+    SubscriptionsPrinter subscriptionsPrinter = new SubscriptionsPrinter(name, new Console());
 
-    whenNew(User.class).withArguments(name, messageRepository, timelinePrinter).thenReturn(newUser);
-    theJavaNetwork.createUser(name, messageRepository, timelinePrinter);
-    verifyNew(User.class).withArguments(name, messageRepository, timelinePrinter);
+    whenNew(User.class)
+        .withArguments(name, messageRepository, timelinePrinter, subscriptionRepository, subscriptionsPrinter)
+        .thenReturn(newUser);
+
+    theJavaNetwork.createUser(name, messageRepository, timelinePrinter, subscriptionRepository, subscriptionsPrinter);
+
+    verifyNew(User.class)
+        .withArguments(name, messageRepository, timelinePrinter, subscriptionRepository, subscriptionsPrinter);
   }
 }

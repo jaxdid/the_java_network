@@ -20,7 +20,9 @@ public class DisplayTimelineFeature {
     SocialNetwork theJavaNetwork = new SocialNetwork();
     user = theJavaNetwork.createUser("Spike",
                                     new MessageRepository(),
-                                    new TimelinePrinter("Spike", console));
+                                    new TimelinePrinter("Spike", console),
+                                    new SubscriptionRepository(),
+                                    new SubscriptionsPrinter("Spike", console));
   }
 
   @Test public void displayTimelineContainingAllMessages() {

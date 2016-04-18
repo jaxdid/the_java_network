@@ -16,14 +16,17 @@ import static org.mockito.Mockito.verify;
 public class UserShould {
   @Mock MessageRepository messageRepository;
   @Mock TimelinePrinter timelinePrinter;
+  @Mock SubscriptionRepository subscriptionRepository;
+  @Mock SubscriptionsPrinter subscriptionsPrinter;
+  @Mock User anotherUser;
 
   private User user;
 
   @Before public void initialize() {
-    user = new User("Spike", messageRepository, timelinePrinter);
+    user = new User("Spike", messageRepository, timelinePrinter, subscriptionRepository, subscriptionsPrinter);
   }
 
-  @Test public void addMessageToMessages() {
+  @Test public void addMessageToMessageRepository() {
     user.publish("A million dollars isn't cool...");
     verify(messageRepository).addMessage("A million dollars isn't cool...");
   }
@@ -33,5 +36,17 @@ public class UserShould {
     given(messageRepository.allMessages()).willReturn(messages);
     user.displayTimeline();
     verify(timelinePrinter).print(messages);
+  }
+
+  @Test public void subscribeToAnotherUser() {
+    user.subscribeTo(anotherUser);
+    verify(subscriptionRepository).addSubscription(anotherUser);
+  }
+
+  @Test public void displayFeedOfAllSubscriptionMessages() {
+    List<String> subscriptionMessages = asList();
+    given(subscriptionRepository.allSubscriptionMessages()).willReturn(subscriptionMessages);
+    user.displaySubscriptions();
+    verify(subscriptionsPrinter).print(subscriptionMessages);
   }
 }
