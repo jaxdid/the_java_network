@@ -7,12 +7,17 @@ A Java codebase for building a social network that allows for users to be create
 ## Design
 Design modeled after [Sandro Mancuso's solution](https://youtu.be/XHnuMjah6ps) to the Bank Kata (Java).
 
+## Experience and Challenges
+- This tech test forced me to get over my inexplicable xenoglossophobia towards Java!
+- Learning JUnit, Mockito and Powermock was intense; finally implementing their features was extremely gratifying.
+- Can see more of the power of the Java language.
+
 ## To-Dos
 - Build an application interface.
-- Add support for a `Message` class, to handle combining message text with owners and timestamps.
+- Add timestamp support to `Message` instances.
 - Extract presentation responsibilities out of `TimelinePrinter` and `SubscriptionsAggregator` classes.
 - Revisit certain design decisions:
-  - Public getter methods (e.g., `User#getName`, `User#getMessages`)
+  - Class interfaces and encapsulation (e.g., public `User#getMessages` getter method)
   - `User` class constructor dependency injection
 
 ## Features
