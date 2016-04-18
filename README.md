@@ -12,8 +12,8 @@ Design modeled after [Sandro Mancuso's solution](https://youtu.be/XHnuMjah6ps) t
 - Add support for a `Message` class, to handle combining message text with owners and timestamps.
 - Extract presentation responsibilities out of `TimelinePrinter` and `SubscriptionsAggregator` classes.
 - Revisit certain design decisions:
-  - Public getter methods (e.g., User#getName, User#getMessages)
-  - User class constructor dependency injection
+  - Public getter methods (e.g., `User#getName`, `User#getMessages`)
+  - `User` class constructor dependency injection
 
 ## Features
 **User creating:** a new user called `Spike` can be created   
