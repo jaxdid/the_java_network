@@ -28,11 +28,11 @@ public class UserShould {
 
   @Test public void addMessageToMessageRepository() {
     user.publish("A million dollars isn't cool...");
-    verify(messageRepository).addMessage("A million dollars isn't cool...");
+    verify(messageRepository).addMessage("Spike", "A million dollars isn't cool...");
   }
 
   @Test public void displayTimelineOfAllMessages() {
-    List<String> messages = asList();
+    List<Message> messages = asList();
     given(messageRepository.allMessages()).willReturn(messages);
     user.displayTimeline();
     verify(timelinePrinter).print(messages);

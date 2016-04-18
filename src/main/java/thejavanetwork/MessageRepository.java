@@ -6,13 +6,13 @@ import java.util.List;
 import static java.util.Collections.unmodifiableList;
 
 public class MessageRepository {
-  private List<String> messages = new ArrayList<>();
+  private List<Message> messages = new ArrayList<>();
 
-  public void addMessage(String message) {
-    messages.add(message);
+  public void addMessage(String author, String messageText) {
+    messages.add(new Message(author, messageText));
   }
 
-  public List<String> allMessages() {
+  public List<Message> allMessages() {
     return unmodifiableList(messages);
   }
 }

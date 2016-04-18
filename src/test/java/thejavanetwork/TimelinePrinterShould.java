@@ -16,7 +16,7 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TimelinePrinterShould {
-  private static final List<String> NO_MESSAGES = emptyList();
+  private static final List<Message> NO_MESSAGES = emptyList();
 
   @Mock Console console;
 
@@ -32,7 +32,11 @@ public class TimelinePrinterShould {
   }
 
   @Test public void printMessagesInReverseChronologicalOrder() {
-    List<String> messages = messagesPresenter("First post", "Second post", "Third post");
+    Message firstMessage = new Message("Spike", "First post");
+    Message secondMessage = new Message("Spike", "Second post");
+    Message thirdMessage = new Message("Spike", "Third post");
+
+    List<Message> messages = messagesPresenter(firstMessage, secondMessage, thirdMessage);
     timelinePrinter.print(messages);
 
     InOrder inOrder = inOrder(console);
@@ -42,7 +46,7 @@ public class TimelinePrinterShould {
     inOrder.verify(console).printLine("First post");
   }
 
-  private List<String> messagesPresenter(String... messages) {
+  private List<Message> messagesPresenter(Message... messages) {
     return asList(messages);
   }
 }

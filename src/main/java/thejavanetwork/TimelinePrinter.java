@@ -11,10 +11,10 @@ public class TimelinePrinter {
     this.timelineHeader = TimelineFormatter.formatHeader(owner);
   }
 
-  public void print(List<String> messages) {
+  public void print(List<Message> messages) {
     console.printLine(timelineHeader);
-    for (String message : TimelineFormatter.reverseOrder(messages)) {
-      console.printLine(message);
+    for (Message message : TimelineFormatter.reverseOrder(messages)) {
+      console.printLine(message.getText());
     }
   }
 }

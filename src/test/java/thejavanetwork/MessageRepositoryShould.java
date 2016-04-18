@@ -18,9 +18,10 @@ public class MessageRepositoryShould {
   }
 
   @Test public void storeAPublishedMessage() throws Exception {
-    messageRepository.addMessage("A million dollars isn't cool.");
-    List<String> messages = messageRepository.allMessages();
+    messageRepository.addMessage("Spike", "A million dollars isn't cool.");
+    List<Message> messages = messageRepository.allMessages();
     assertThat(messages.size(), is(1));
-    assertThat(messages.get(0), is("A million dollars isn't cool."));
+    assertThat(messages.get(0).getAuthor(), is("Spike"));
+    assertThat(messages.get(0).getText(), is("A million dollars isn't cool."));
   }
 }

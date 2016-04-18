@@ -2,8 +2,6 @@ package thejavanetwork;
 
 import java.util.List;
 
-import static java.util.Collections.unmodifiableList;
-
 public class User {
   private String name;
   private MessageRepository messageRepository;
@@ -23,16 +21,16 @@ public class User {
     this.subscriptionsPrinter = subscriptionsPrinter;
   }
 
-  public String getName() {
+  private String getName() {
     return name;
   }
 
-  public List<String> getMessages() {
+  public List<Message> getMessages() {
     return messageRepository.allMessages();
   }
 
   public void publish(String messageText) {
-    messageRepository.addMessage(messageText);
+    messageRepository.addMessage(getName(), messageText);
   }
 
   public void displayTimeline() {

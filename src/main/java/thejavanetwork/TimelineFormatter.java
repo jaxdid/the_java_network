@@ -9,7 +9,7 @@ public class TimelineFormatter {
     return "*** " + user + "'s Timeline ***";
   }
 
-  public static List<String> reverseOrder(List<String> messages) {
+  public static List<Message> reverseOrder(List<Message> messages) {
     return reverse(messages);
   }
 }
